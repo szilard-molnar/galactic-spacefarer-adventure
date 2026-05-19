@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/core/AppComponent"],function(e){"use strict";const a=e.extend("galactic.spacefarer.galacticspacefarerui.Component",{metadata:{manifest:"json"}});return a});
+//# sourceMappingURL=Component.js.map

@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/test/opaQunit","./pages/JourneyRunner"],function(e,a){"use strict";function n(){QUnit.module("SpacefarersObjectPageObjectPage journey");e("Navigate to SpacefarersObjectPageObjectPage",function(e,a,n){e.iStartMyApp();a.onTheSpacefarersList.onFilterBar().iExecuteSearch();n.onTheSpacefarersList.onTable().iCheckRows();a.onTheSpacefarersList.onTable().iPressRow(0);n.onTheSpacefarersObjectPage.iSeeThisPage()});e("Teardown",function(e,a,n){e.iTearDownMyApp()})}a.run([n])});
+//# sourceMappingURL=SpacefarersObjectPageJourney.js.map
