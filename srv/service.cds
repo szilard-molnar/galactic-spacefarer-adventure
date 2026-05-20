@@ -5,7 +5,7 @@ using {
     galactic.spacefarer.Position
  } from '../db/schema';
 
-service GalacticService {
+service GalacticService @(requires: 'authenticated-user') {
 
     @odata.draft.enabled
     entity Spacefarers as projection on Spacefarer;
