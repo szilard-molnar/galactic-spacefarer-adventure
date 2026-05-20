@@ -1,4 +1,20 @@
 module.exports = (srv) => {
+  srv.before("READ", "Spacefarers", (req) => {
+    if (req.user.is("SpacefarerAdmin")) {
+      return;
+    }
+
+    const planetId = req.user.attr?.planetId;
+
+    if (!planetId) {
+      return req.reject(403, "No planet assigned to current user");
+    }
+
+    req.query.where({
+      originPlanet_ID: planetId,
+    });
+  });
+
   srv.before("CREATE", "Spacefarers", (req) => {
     const data = req.data;
 
@@ -42,6 +58,36 @@ module.exports = (srv) => {
 
     if (data.wormholeNavigationSkill === undefined) {
       data.wormholeNavigationSkill = 1;
+    }
+
+    if (!data.originPlanet_ID) {
+      const planetId = req.user.attr?.planetId;
+
+      if (planetId && planetId !== "*") {
+        data.originPlanet_ID = planetId;
+      }
+    }
+  });
+
+  srv.before("UPDATE", "Spacefarers", (req) => {
+    const data = req.data;
+
+    if (
+      data.wormholeNavigationSkill !== undefined &&
+      (data.wormholeNavigationSkill < 1 ||
+        data.wormholeNavigationSkill > 100)
+    ) {
+      return req.reject(
+        400,
+        "Wormhole navigation skill must be between 1 and 100"
+      );
+    }
+
+    if (
+      data.stardustCollection !== undefined &&
+      data.stardustCollection < 0
+    ) {
+      return req.reject(400, "Stardust collection cannot be negative");
     }
   });
 

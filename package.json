@@ -18,5 +18,43 @@
   ],
   "sapux": [
     "app/galactic-spacefarer-ui"
-  ]
+  ],
+  "cds": {
+  "requires": {
+    "auth": {
+      "kind": "mocked",
+      "users": {
+        "alice": {
+          "password": "alice",
+          "roles": [
+            "SpacefarerViewer",
+            "SpacefarerEditor"
+          ],
+          "attr": {
+            "planetId": "1"
+          }
+        },
+        "bob": {
+          "password": "bob",
+          "roles": [
+            "SpacefarerViewer",
+            "SpacefarerEditor"
+          ],
+          "attr": {
+            "planetId": "2"
+          }
+        },
+        "admin": {
+          "password": "admin",
+          "roles": [
+            "SpacefarerAdmin"
+          ],
+          "attr": {
+            "planetId": "*"
+          }
+        }
+      }
+    }
+  }
+}
 }

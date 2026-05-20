@@ -13,6 +13,7 @@ entity Spacefarer : managed {
         wormholeNavigationSkill: Integer;
         department : Association to Department;
         position : Association to Position;
+        originPlanetName : String(100);
 }
 
 entity Planet {
