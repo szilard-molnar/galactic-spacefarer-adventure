@@ -25,6 +25,13 @@ module.exports = (srv) => {
       );
     }
 
+    if (
+      data.stardustCollection !== undefined &&
+      data.stardustCollection < 0
+    ) {
+      return req.reject(400, "Stardust collection cannot be negative");
+    }
+
     if (!data.spacesuitColor) {
       data.spacesuitColor = "Cosmic Silver";
     }
@@ -39,6 +46,12 @@ module.exports = (srv) => {
   });
 
   srv.after("CREATE", "Spacefarers", (data) => {
-    console.log(`Cosmic notification email sent to: ${data.email}`);
+    console.log("======================================");
+    console.log("🚀 Cosmic notification email sent");
+    console.log(`To: ${data.email}`);
+    console.log(
+      `Message: Congratulations ${data.firstName} ${data.lastName}, your galactic adventure has begun!`
+    );
+    console.log("======================================");
   });
 };
