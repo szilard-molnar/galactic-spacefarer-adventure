@@ -15,7 +15,7 @@ This project was created as part of a SAP CAP + SAP Fiori Elements technical exe
 
 ---
 
-# ▶How to Run the Project
+# How to Run the Project
 
 ## 1. Install dependencies
 
@@ -95,7 +95,7 @@ After restarting the application or logging in again, the original mock data wil
 
 ---
 
-# 🎨 Fiori Application
+# Fiori Application
 
 The Fiori application for this demo project was generated using:
 
