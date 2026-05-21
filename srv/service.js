@@ -93,10 +93,10 @@ module.exports = (srv) => {
 
   srv.after("CREATE", "Spacefarers", (data) => {
     console.log("======================================");
-    console.log("🚀 Cosmic notification email sent");
+    console.log("CREATE notification mail sent");
     console.log(`To: ${data.email}`);
     console.log(
-      `Message: Congratulations ${data.firstName} ${data.lastName}, your galactic adventure has begun!`
+      `Message: ${data.firstName} ${data.lastName} is successfully registered.`
     );
     console.log("======================================");
   });
