@@ -1,40 +1,108 @@
-# galactic-spacefarer-adventure
+# Galactic Spacefarer Adventure
 
-This project was created as part of a SAP CAP + Fiori Elements technical exercise.
+This project was created as part of a SAP CAP + SAP Fiori Elements technical exercise.
 
-# How to run the project
+---
 
-Navigate to the root folder of the application, and run npm 'install' in your terminal.
+# Technologies
 
-Run 'cds watch' in your terminal.
+* SAP CAP (Cloud Application Programming Model)
+* SAP Fiori Elements
+* OData V4
+* SAP UI5
+* SQLite
+* Node.js
 
-Open localhost:4004 in your browser.
+---
 
-Under the Web Applications click:
+# ▶How to Run the Project
+
+## 1. Install dependencies
+
+Navigate to the root folder of the project and run:
+
+```bash
+npm install
+```
+
+---
+
+## 2. Start the CAP server
+
+```bash
+cds watch
+```
+
+---
+
+## 3. Open the application
+
+Open the following URL in your browser:
+
+```txt
+http://localhost:4004
+```
+
+Under **Web Applications**, open:
+
+```txt
 /galactic-spacefarer/dist
+```
 
-When prompted, provide the username and the password to continue.
-Username: alice
-Password: alice
+---
 
-OR
+# Mock Authentication
 
-Username: bob
-Password: bob
+When prompted, use one of the following demo users:
 
-OR
+| Username | Password | Access        |
+| -------- | -------- | ------------- |
+| alice    | alice    | Planet X data |
+| bob      | bob      | Planet Y data |
+| admin    | admin    | Full access   |
 
-Username: admin
-Password: admin
+---
 
-You will see an empty table. Click "GO" in the top right corner to load mock table data.
-Mock data is stored in the .xls files under /db/data folder.
+# Loading Mock Data
 
-You can create, update, delete any database inputs, however, in this demo the .cls files will not be overwritten. 
-If you login again with a given user you should see the original mock database inputs.
+After login, the table may initially appear empty.
 
+Click the **GO** button in the top-right corner to load the mock data.
 
-# Fiori Application
+Mock data files are located under:
 
-For this demo application the Fiori application was created by "SAP Fiori Tools - Extension Pack" VS Code extension. 
+```txt
+/db/data
+```
 
+---
+
+# CRUD Operations
+
+The application supports:
+
+* Create
+* Read
+* Update
+* Delete
+
+operations for Spacefarers.
+
+You can freely modify the database content during runtime.
+
+However, for demo purposes, the original mock data files are not overwritten.
+After restarting the application or logging in again, the original mock data will be restored.
+
+---
+
+# 🎨 Fiori Application
+
+The Fiori application for this demo project was generated using:
+
+```txt
+SAP Fiori tools - Extension Pack
+```
+
+for Visual Studio Code.
+
+---
