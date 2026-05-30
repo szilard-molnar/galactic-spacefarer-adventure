@@ -3,7 +3,6 @@
   "compilerOptions": {
     "rootDir": "./webapp",
     "outDir": "./dist",
-    "baseUrl": "./",
     "paths": {
       "galactic/spacefarer/galacticspacefarerui/*": [
         "./webapp/*"
@@ -17,6 +16,12 @@
     ]
   },
   "include": [
-    "./webapp/**/*"
+    "./webapp/**/*.ts",
+    "./webapp/**/*.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "**/*.js"
   ]
 }

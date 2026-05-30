@@ -1,0 +1,2 @@
+sap.ui.define([],function(){"use strict";async function e(e,t){const s=await fetch(e,{headers:{Accept:"application/json",...t?.headers??{}},...t});if(!s.ok){let e=s.statusText;try{const t=await s.json();e=t.error?.message??e}catch{}throw new Error(`Request failed: ${s.status} ${e}`)}return s.json()}var t={__esModule:true};t.request=e;return t});
+//# sourceMappingURL=httpClient.js.map

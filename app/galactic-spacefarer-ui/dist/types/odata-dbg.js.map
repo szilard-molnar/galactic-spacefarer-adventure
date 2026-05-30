@@ -1,0 +1,1 @@
+{"version":3,"file":"odata-dbg.js","names":[],"sources":["odata.ts"],"sourcesContent":["export type ODataCollection<T> = {\n  value: T[];\n};\n\nexport type ODataErrorResponse = {\n  error?: {\n    code?: string;\n    message?: string;\n  };\n};"],"mappings":"","ignoreList":[]}
