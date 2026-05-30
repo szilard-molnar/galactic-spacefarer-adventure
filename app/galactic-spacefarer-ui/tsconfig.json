@@ -3,11 +3,6 @@
   "compilerOptions": {
     "rootDir": "./webapp",
     "outDir": "./dist",
-    "paths": {
-      "galactic/spacefarer/galacticspacefarerui/*": [
-        "./webapp/*"
-      ]
-    },
     "typeRoots": [
       "./node_modules/@types",
       "./node_modules/@sapui5/types",
@@ -21,7 +16,6 @@
   ],
   "exclude": [
     "dist",
-    "node_modules",
-    "**/*.js"
+    "node_modules"
   ]
 }

@@ -1,2 +1,2 @@
-
+sap.ui.define(["./httpClient"],function(e){"use strict";const t=e["request"];async function a(){const e=await t("/odata/v4/galactic/Spacefarers");return e.value}var r={__esModule:true};r.getSpacefarers=a;return r});
 //# sourceMappingURL=spacefarerService.js.map

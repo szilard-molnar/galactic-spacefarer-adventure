@@ -1,0 +1,1 @@
+{"version":3,"file":"spacefarer-dbg.js","names":[],"sources":["spacefarer.ts"],"sourcesContent":["export type Spacefarer = {\n  ID: string;\n  name: string;\n  stardustCollection: number;\n  wormholeNavigationSkill: number;\n  originPlanet_ID?: string;\n  department_ID?: string;\n  position_ID?: string;\n};"],"mappings":"","ignoreList":[]}
