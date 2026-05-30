@@ -16,7 +16,8 @@
   "scripts": {
     "start": "cds-serve",
     "watch-galactic-spacefarer-ui": "cds watch --open galactic.spacefarer.galacticspacefarerui/index.html?sap-ui-xx-viewCache=false --livereload false",
-    "test": "jest"
+    "test": "jest --runInBand --testTimeout=30000",
+    "test:coverage": "jest --coverage --runInBand --testTimeout=30000"
   },
   "private": true,
   "workspaces": [
