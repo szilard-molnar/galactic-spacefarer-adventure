@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "moduleResolution": "bundler",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@sapui5/types"
+    ],
+    "noEmit": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/dist",
+    "**/coverage",
+    "**/eslint.config.mjs"
+  ]
+}

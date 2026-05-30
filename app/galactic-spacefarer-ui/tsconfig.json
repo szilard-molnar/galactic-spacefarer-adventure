@@ -1,12 +1,6 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es2022",
-    "module": "es2022",
-    "skipLibCheck": true,
-    "allowJs": true,
-    "strict": true,
-    "strictPropertyInitialization": false,
-    "moduleResolution": "node",
     "rootDir": "./webapp",
     "outDir": "./dist",
     "baseUrl": "./",
