@@ -1,20 +1,29 @@
-process.env.NODE_ENV = "test";
-process.env.CDS_ENV = "test";
-
 const cds = require("@sap/cds");
 
 jest.setTimeout(30000);
 
-const { GET, defaults } = cds.test(__dirname + "/..");
+const admin = cds.test(__dirname + "/..");
+const alice = cds.test(__dirname + "/..");
+const bob = cds.test(__dirname + "/..");
 
-defaults.auth = {
+admin.defaults.auth = {
     username: "admin",
     password: "admin"
 };
 
+alice.defaults.auth = {
+    username: "alice",
+    password: "alice"
+};
+
+bob.defaults.auth = {
+    username: "bob",
+    password: "bob"
+};
+
 describe("GalacticService", () => {
     it("should return spacefarers", async () => {
-        const response = await GET("/odata/v4/galactic/Spacefarers");
+        const response = await admin.GET("/odata/v4/galactic/Spacefarers");
 
         expect(response.status).toBe(200);
         expect(response.data.value).toBeDefined();
@@ -22,7 +31,7 @@ describe("GalacticService", () => {
     });
 
     it("should return valid spacefarer structure", async () => {
-        const response = await GET("/odata/v4/galactic/Spacefarers");
+        const response = await admin.GET("/odata/v4/galactic/Spacefarers");
 
         expect(response.status).toBe(200);
 
@@ -36,20 +45,51 @@ describe("GalacticService", () => {
     });
 
     it("should return 404 for invalid endpoint", async () => {
-        const response = await GET("/odata/v4/galactic/UnknownEntity", {
-            validateStatus: () => true
+        const response = await admin.GET("/odata/v4/galactic/UnknownEntity", {
+            validateStatus: () => true,
         });
 
         expect(response.status).toBe(404);
     });
 
     it("should contain positive stardust collection", async () => {
-        const response = await GET("/odata/v4/galactic/Spacefarers");
+        const response = await admin.GET("/odata/v4/galactic/Spacefarers");
 
         expect(response.status).toBe(200);
 
         const firstSpacefarer = response.data.value[0];
 
         expect(firstSpacefarer.stardustCollection).toBeGreaterThanOrEqual(0);
+    });
+
+    it("should return all seeded spacefarers for admin", async () => {
+        const response = await admin.GET("/odata/v4/galactic/Spacefarers");
+
+        expect(response.status).toBe(200);
+        expect(response.data.value).toHaveLength(5);
+    });
+
+    it("should expose planets endpoint", async () => {
+        const response = await admin.GET("/odata/v4/galactic/Planets");
+
+        expect(response.status).toBe(200);
+        expect(response.data.value).toBeDefined();
+        expect(Array.isArray(response.data.value)).toBe(true);
+    });
+
+    it("should expose departments endpoint", async () => {
+        const response = await admin.GET("/odata/v4/galactic/Departments");
+
+        expect(response.status).toBe(200);
+        expect(response.data.value).toBeDefined();
+        expect(Array.isArray(response.data.value)).toBe(true);
+    });
+
+    it("should expose positions endpoint", async () => {
+        const response = await admin.GET("/odata/v4/galactic/Positions");
+
+        expect(response.status).toBe(200);
+        expect(response.data.value).toBeDefined();
+        expect(Array.isArray(response.data.value)).toBe(true);
     });
 });
