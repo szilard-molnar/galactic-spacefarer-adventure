@@ -1,35 +1,7 @@
 import type { Request, Service } from "@sap/cds";
 
-type SpacefarerPayload = {
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  wormholeNavigationSkill?: number;
-  stardustCollection?: number;
-  spacesuitColor?: string;
-  originPlanet_ID?: string;
-};
-
-type UserWithPlanet = Request["user"] & {
-  attr?: {
-    planetId?: string;
-  };
-};
-
-const ERROR_MESSAGES = {
-  noPlanetAssigned: "No planet assigned to current user",
-  firstNameRequired: "First name is required",
-  lastNameRequired: "Last name is required",
-  emailRequired: "Email is required",
-  invalidWormholeSkill: "Wormhole navigation skill must be between 1 and 100",
-  negativeStardust: "Stardust collection cannot be negative"
-} as const;
-
-const DEFAULTS = {
-  spacesuitColor: "Cosmic Silver",
-  stardustCollection: 0,
-  wormholeNavigationSkill: 1
-} as const;
+import { ERROR_MESSAGES, DEFAULTS } from "./constants/spafarerConsts";
+import type { SpacefarerPayload, UserWithPlanet } from "./types/spacefarerTypes";
 
 function getPlanetId(req: Request): string | undefined {
   return (req.user as UserWithPlanet).attr?.planetId;
