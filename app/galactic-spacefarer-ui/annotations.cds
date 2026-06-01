@@ -5,32 +5,32 @@ annotate service.Spacefarers with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'firstName',
+                Label : 'First Name',
                 Value : firstName,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'lastName',
+                Label : 'Last Name',
                 Value : lastName,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'email',
+                Label : 'Email',
                 Value : email,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'spacesuitColor',
+                Label : 'Spacesuit Color',
                 Value : spacesuitColor,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'stardustCollection',
+                Label : 'Stardust Collection',
                 Value : stardustCollection,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'wormholeNavigationSkill',
+                Label : 'Wormhole Navigation Skill',
                 Value : wormholeNavigationSkill,
             },
         ],
@@ -46,27 +46,27 @@ annotate service.Spacefarers with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'firstName',
+            Label : 'First Name',
             Value : firstName,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'lastName',
+            Label : 'Last Name',
             Value : lastName,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'email',
+            Label : 'Email',
             Value : email,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'spacesuitColor',
+            Label : 'Spacesuit Color',
             Value : spacesuitColor,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'stardustCollection',
+            Label : 'Stardust Collection',
             Value : stardustCollection,
         },
     ],
